@@ -3,7 +3,7 @@
 
  _Using the movie database API called OMDB._
 
- **By _Nick Ramsey, Jacob Irwin, Abdellah Rahman, Lake Bramlett, Daniel Hongel_**
+ **By _Nick Ramsey, Jacob Irwin, Abdellah Ramadan, Lake Bramlett, Daniel Hongel_**
 
 ## Description
 
@@ -53,4 +53,4 @@ _Link to GitHub repo:_
 
 * _open source_
 
-Copyright (c) 2019 **_Nick Ramsey, Jacob Irwin, Abdellah Rahman, Lake Bramlett, Daniel Hongel_**
+Copyright (c) 2019 **_Nick Ramsey, Jacob Irwin, Abdellah Ramadan, Lake Bramlett, Daniel Hongel_**
