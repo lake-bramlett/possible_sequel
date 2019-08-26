@@ -1,6 +1,6 @@
 API - OMDB:-----------------------------------------------------
 
-Here is your key: 5316d316
+
 
 Using the API:
 Please append it to all of your API requests,
