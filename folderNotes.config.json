@@ -1,0 +1,13 @@
+{
+  "color": "orange",
+  "notes": {
+  "app": "APP",
+  "app/views": "VIEWS",
+  "app/controllers": "CONTROLLERS",
+  "config": "CONFIG",
+  "db": "DB",
+  "spec": "SPEC",
+  "app/models": "MODELS",
+  "config/routes.rb": "ROUTES"
+  }
+}
