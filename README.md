@@ -1,8 +1,9 @@
 # _Possible Sequel_
 
-#### _Using The Movie Database.com_
 
-#### By _**Nick Ramsey, Jacob Irwin, Abdellah Rahman, Lake Bramlett, Daniel Hongel**_
+ _Using the movie database API called OMDB._
+
+ **By _Nick Ramsey, Jacob Irwin, Abdellah Rahman, Lake Bramlett, Daniel Hongel_**
 
 ## Description
 
