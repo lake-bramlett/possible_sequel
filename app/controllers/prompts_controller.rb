@@ -1,4 +1,8 @@
 class PromptsController < ApplicationController
+  before_action :authorize
+
+  def secret
+  end
 
   def index
     @prompts = Prompt.all
@@ -45,6 +49,7 @@ class PromptsController < ApplicationController
     @prompt.destroy
     redirect_to prompts_path
   end
+
 
   private
   def prompt_params
