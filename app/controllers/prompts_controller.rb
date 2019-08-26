@@ -11,10 +11,7 @@ class PromptsController < ApplicationController
   end
 
   def create
-    binding.pry
-    movie_a_title = :movie_a_url
-    movie_b_title = :movie_b_url
-    @prompt = Prompt.create(movie_a_url: "test.com/#{movie_a_title}", movie_b_url: "test.com/#{movie_b_title}")
+    @prompt = Prompt.create(prompt_params)
     if @prompt.save
       flash[:notice] = "Prompt successfully created!"
       redirect_to prompts_path
@@ -51,10 +48,6 @@ class PromptsController < ApplicationController
 
   private
   def prompt_params
-    movie_a_title = :movie_a_url
-    movie_b_title = :movie_b_url
-    movie_a = "api.com/#{movie_a_title}"
-    movie_b = "api.com/#{movie_b_title}"
     params.require(:prompt).permit(:movie_a_url, :movie_b_url)
   end
 
