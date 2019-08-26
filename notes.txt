@@ -1,9 +1,8 @@
-api-key after registering for https://www.themoviedb.org/settings/api: v4 auth: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NTQzOGNkMzJmNjJmMTlkNzIxYzQ0MzIzNWEyNDdjMyIsInN1YiI6IjVkNjMwZTExN2Y2YzhkMDI1ZmVjNmQwMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LiH9rT3Pc17J7qrhgWtnpjk30M0d8IKboxJuv5xH_zs
+API - OMDB:-----------------------------------------------------
 
-v3 auth: 75438cd32f62f19d721c443235a247c3
+
 
 Using the API:
+Please append it to all of your API requests,
 
-An example request looks like:
-
-https://api.themoviedb.org/3/movie/550?api_key=75438cd32f62f19d721c443235a247c3
+OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=5316d316

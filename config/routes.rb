@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  
+
   resources :users do
     resources :posts
   end
   resources :prompts do
     resources :posts
   end
-
+  get "/", to: "movies#index"
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
