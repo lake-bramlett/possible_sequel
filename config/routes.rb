@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/", to: "movies#manual"
   get "/random", to: 'movies#random'#generate random prompt
   get "/about", to: "pages#show", as: "about"
+  get "/contact", to: "pages#contact", as: "contact"
 
 
   get '/signup' => 'users#new'
