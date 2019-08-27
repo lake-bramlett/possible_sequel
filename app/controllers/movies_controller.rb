@@ -15,7 +15,6 @@ class MoviesController < ApplicationController
       @actors_two = @prompt[1]["Actors"]
       @plot_one = @prompt[0]["Plot"]
       @plot_two = @prompt[1]["Plot"]
-      byebug
       render :index
     end
 
