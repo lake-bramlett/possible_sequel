@@ -7,9 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     @user = current_user
-
     @prompt = Prompt.find(params[:prompt_id])
     @post = @prompt.posts.new(body: post_params["body"], user_id: @user.id)
     if @prompt.save

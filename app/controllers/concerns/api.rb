@@ -17,8 +17,9 @@ module  API
     end
     def self.call_by_actor(names)
       names = names.split(",")
-      name = names[0].split(" ")
-      name = name.join("%20")
+      length = names.length
+      @name = names[rand(0..(length-1))].split(" ")
+      name = @name.join("%20")
       response = RestClient::Request.execute(
         :method => :get,
         :url => "https://api.themoviedb.org/3/search/person?api_key=#{KEYS["API_KEY2"]}&language=en-US&query=#{name}&page=1&include_adult=false"

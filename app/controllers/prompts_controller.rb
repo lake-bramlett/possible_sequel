@@ -19,9 +19,21 @@ class PromptsController < ApplicationController
   def create
     movie_one = params["prompt"]["movie_a"]
     movie_two = params["prompt"]["movie_b"]
-    response_one = API::Interface.call_by_title(movie_one)
-    response_two = API::Interface.call_by_title(movie_two)
-    @prompt = Prompt.create(movie_a: {title: JSON.parse(response_one)["Title"], year: JSON.parse(response_one)["Year"], actors: JSON.parse(response_one)["Actors"], plot: JSON.parse(response_one)["Plot"], poster: JSON.parse(response_one)["Poster"]}, movie_b: {title: JSON.parse(response_two)["Title"], year: JSON.parse(response_two)["Year"], actors: JSON.parse(response_two)["Actors"], plot: JSON.parse(response_two)["Plot"], poster: JSON.parse(response_two)["Poster"]})
+    response_one = JSON.parse(API::Interface.call_by_title(movie_one))
+    response_two = JSON.parse(API::Interface.call_by_title(movie_two))
+    @prompt = Prompt.create(movie_a: {
+                              title: response_one["Title"],
+                              year: response_one["Year"],
+                              actors: response_one["Actors"],
+                              plot: response_one["Plot"],
+                              poster: response_one["Poster"]},
+                            movie_b: {
+                              title: response_two["Title"],
+                              year: response_two["Year"],
+                              actors: response_two["Actors"],
+                              plot: response_two["Plot"],
+                              poster: response_two["Poster"]}
+                            )
     if @prompt.save
       flash[:notice] = "Prompt successfully created!"
       redirect_to prompts_path
@@ -43,7 +55,11 @@ class PromptsController < ApplicationController
 
   def update
     @prompt = Prompt.find(params[:id])
-    if @prompt.update(prompt_params)
+    movie_one = params["prompt"]["movie_a"]
+    movie_two = params["prompt"]["movie_b"]
+    response_one = API::Interface.call_by_title(movie_one)
+    response_two = API::Interface.call_by_title(movie_two)
+    if @prompt.update(movie_a: {title: JSON.parse(response_one)["Title"], year: JSON.parse(response_one)["Year"], actors: JSON.parse(response_one)["Actors"], plot: JSON.parse(response_one)["Plot"], poster: JSON.parse(response_one)["Poster"]}, movie_b: {title: JSON.parse(response_two)["Title"], year: JSON.parse(response_two)["Year"], actors: JSON.parse(response_two)["Actors"], plot: JSON.parse(response_two)["Plot"], poster: JSON.parse(response_two)["Poster"]})
       redirect_to prompts_path
     else
       render :edit
@@ -58,9 +74,10 @@ class PromptsController < ApplicationController
 
   def random
     @prompt = Prompt.random_prompt("the%20wolf%20of%20wall%20street")#Random movie gen, only ranfomizes second movie right now---change to Movies obj or move to prompt controller
-    byebug
     render :index
   end
+
+
 
 
   private
