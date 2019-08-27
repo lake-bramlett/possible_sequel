@@ -1,26 +1,10 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Guest/Desktop/possible-sequel/spec/features/movie_routes_spec.rb": [
+      "/Users/Guest/Desktop/possible-sequel/spec/controllers/pages_controller_spec.rb": [
         1,
         null,
         1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         null,
         null
       ],
@@ -345,6 +329,10 @@
         1,
         null
       ],
+      "/Users/Guest/Desktop/possible-sequel/app/helpers/pages_helper.rb": [
+        1,
+        null
+      ],
       "/Users/Guest/Desktop/possible-sequel/app/controllers/concerns/api.rb": [
         1,
         null,
@@ -408,6 +396,22 @@
         null,
         null
       ],
+      "/Users/Guest/Desktop/possible-sequel/app/controllers/pages_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/Guest/Desktop/possible-sequel/app/controllers/posts_controller.rb": [
         1,
         null,
@@ -419,8 +423,6 @@
         null,
         1,
         0,
-        0,
-        null,
         0,
         0,
         0,
@@ -525,6 +527,10 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
         null,
         0,
         null,
@@ -539,6 +545,8 @@
         1,
         0,
         0,
+        null,
+        null,
         null,
         null,
         null,
@@ -685,7 +693,16 @@
         null,
         1,
         1,
+        null,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         1,
         1,
@@ -693,10 +710,29 @@
         1,
         1,
         1,
+        null
+      ],
+      "/Users/Guest/Desktop/possible-sequel/spec/features/movie_routes_spec.rb": [
+        1,
+        null,
+        1,
         null,
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/Guest/Desktop/possible-sequel/spec/features/posts_routes_spec.rb": [
@@ -808,6 +844,23 @@
         null,
         null
       ],
+      "/Users/Guest/Desktop/possible-sequel/spec/helpers/pages_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/Guest/Desktop/possible-sequel/spec/models/post_spec.rb": [
         1,
         null,
@@ -839,6 +892,6 @@
         null
       ]
     },
-    "timestamp": 1566946246
+    "timestamp": 1566948981
   }
 }
