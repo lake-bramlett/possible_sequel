@@ -1,6 +1,6 @@
 class Prompt < ApplicationRecord
   include API
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   def self.random_prompt(title)
     @movies = []

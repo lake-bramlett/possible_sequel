@@ -1,0 +1,7 @@
+<h1>Edit post:</h1>
+
+<%= form_for [@prompt, @post] do |f| %>
+<%= f.label :body %>
+<%= f.text_area :body, :value => nil %>
+<p><%= f.submit %></p>
+<% end %>
