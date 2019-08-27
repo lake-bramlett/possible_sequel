@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
 
-  get "/random", to: 'movies#random'#generate random prompt
   resources :users do
     resources :posts
   end
   resources :prompts do
     resources :posts
   end
+
   get "/", to: "movies#manual"
+  get "/random", to: 'movies#random'#generate random prompt
+  get "/about", to: "pages#show", as: "about"
+
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
