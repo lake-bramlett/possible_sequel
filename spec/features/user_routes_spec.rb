@@ -23,6 +23,12 @@ describe 'User routes' do
     expect(page).to have_content("Sign out")
   end
 
+  it 'creates a user session' do
+    visit '/signout'
+    expect(page).to have_content("You've signed out.")
+    expect(page).to have_content("Sign in")
+  end
+
 end
 
 describe 'user route errors' do
