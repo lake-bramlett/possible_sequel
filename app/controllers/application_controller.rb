@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
       @current_user = User.find(session[:user_id])
     end
   end
+
+  def authorize
+    if !current_user
+      flash[:alert] = "You are not authorized to visit that page."
+      redirect_to '/'
+    end
+  end
 end

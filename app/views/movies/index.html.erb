@@ -1,9 +1,17 @@
 <h1 class="page-header">Possible Sequel</h1><br />
 
 
-
-
 <% @prompt.each do |m| %>
 <%= m["Title"]
 %>
 <% end %>
+
+<%= @response_one %>
+<h1>Title:</h1> <%= @title_one %>
+<h2>Actors:</h2> <%= @actors_one %>
+<h2>Plot:</h2> <%= @plot_one %>
+
+<%= @response_two %>
+<h1>Title:</h1> <%= @title_two %>
+<h2>Actors:</h2> <%= @actors_two %>
+<h2>Plot:</h2> <%= @plot_two %>

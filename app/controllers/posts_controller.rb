@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def new
     @prompt = Prompt.find(params[:prompt_id])
-    @post = prompt.posts.new
+    @post = @prompt.posts.new
     render :new
   end
 
