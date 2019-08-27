@@ -1,0 +1,26 @@
+<h1>Movie 1 <%= @prompt.movie_a["title"] %></h1>
+<h1>Movie 2 <%= @prompt.movie_b["title"] %></h1>
+
+
+<% if @prompt.posts.any? %>
+<h4>Here are the posts for this prompt:</h4>
+
+<% @prompt.posts.each do |post| %>
+  <ul>
+    <li>
+      <%= link_to post.body, prompt_post_path(@prompt, post) %>
+    </li>
+  </ul>
+<% end %>
+<% else %>
+<p>No posts are listed for this prompt.</p>
+<% end %>
+
+<p><%= link_to "Add a post", new_prompt_post_path(@prompt) %></p>
+
+<p><%= link_to "Edit", edit_prompt_path(@prompt) %></p>
+<p><%= link_to "Delete", prompt_path(@prompt),
+                       :data => {:confirm => "You sure?",
+                                 :method => "delete"} %></p>
+
+<p><%= link_to "Return to prompts", prompts_path %></p>
