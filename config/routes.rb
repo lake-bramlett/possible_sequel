@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get "/random", to: 'prompts#random'#generate random prompt
+  get "/random", to: 'movies#random'#generate random prompt
   resources :users do
     resources :posts
   end

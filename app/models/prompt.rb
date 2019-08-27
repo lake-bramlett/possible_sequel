@@ -2,7 +2,7 @@ class Prompt < ApplicationRecord
   include API
   has_many :posts
 
-  def self.movie_prompt(title)
+  def self.random_prompt(title)
     @movies = []
     response1 = API::Interface.call_by_title(title)
     movie1 = JSON.parse(response1)
@@ -36,5 +36,5 @@ def find_similar_movie(movie)
   actors = movie["Actors"]
   response2 = API::Interface.call_by_actor(actors)
   byebug
-  similar_movie = JSON.parse(response2)
+  response2 = JSON.parse(response2)
 end
