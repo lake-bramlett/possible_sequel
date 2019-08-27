@@ -35,6 +35,9 @@ private
 def find_similar_movie(movie)
   actors = movie["Actors"]
   response2 = API::Interface.call_by_actor(actors)
-  byebug
+<<<<<<< HEAD
+  similar_movie = JSON.parse(response2)
+=======
   response2 = JSON.parse(response2)
+>>>>>>> master
 end
