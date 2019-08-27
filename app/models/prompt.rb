@@ -2,7 +2,7 @@ class Prompt < ApplicationRecord
   include API
   has_many :posts
 
-  def self.movie_prompt(title)
+  def self.random_prompt(title)
     @movies = []
     response1 = API::Interface.call_by_title(title)
     movie1 = JSON.parse(response1)
@@ -16,6 +16,14 @@ class Prompt < ApplicationRecord
     return @movies
   end
 
+  def self.manual_prompt(movie_one, movie_two)
+    response_one = API::Interface.call_by_title(movie_one)
+    response_two = API::Interface.call_by_title(movie_two)
+    response_one = JSON.parse(response_one)
+    response_two = JSON.parse(response_two)
+
+    @prompt = [response_one, response_two]
+  end
 
 end
 
@@ -24,5 +32,5 @@ private
 def find_similar_movie(movie)
   actors = movie["Actors"]
   response2 = API::Interface.call_by_actor(actors)
-  similar_movie = JSON.parse(response2)
+  response2 = JSON.parse(response2)
 end
