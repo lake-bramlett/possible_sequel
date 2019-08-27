@@ -1,3 +1,4 @@
+
 class PromptsController < ApplicationController
   before_action :authorize
 
