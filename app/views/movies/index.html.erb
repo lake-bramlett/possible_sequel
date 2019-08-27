@@ -1,3 +1,9 @@
 <h1 class="page-header">Possible Sequel</h1><br />
 
-<%= @movies["Title"] %>
+
+
+
+<% @prompt.each do |m| %>
+<%= m["Title"]
+%>
+<% end %>

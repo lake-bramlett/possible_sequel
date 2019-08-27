@@ -8,7 +8,13 @@ class Prompt < ApplicationRecord
     movie1 = JSON.parse(response1)
     @movies.push(movie1)
     movie2 = find_similar_movie(movie1)
-    
+    length = movie2["results"][0]["known_for"].length
+    movie2 = movie2["results"][0]["known_for"][rand(0..(length-1))]["title"]
+    response2 = API::Interface.call_by_title(movie2)
+    movie2 = JSON.parse(response2)
+    byebug
+    @movies.push(movie2)
+    return @movies
   end
 
 
@@ -16,12 +22,9 @@ end
 
 private
 
-# def find_similar_movie(movie)
-#   actors = movie["Actors"]
-#   # byebug
-#   i = 0
-#   while !similar_movie
-#
-#     response2 = API::Interface.call()
-#   end
-# end
+def find_similar_movie(movie)
+  actors = movie["Actors"]
+  response2 = API::Interface.call_by_actor(actors)
+  byebug
+  similar_movie = JSON.parse(response2)
+end

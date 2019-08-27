@@ -5,9 +5,9 @@ class MoviesController < ApplicationController
 
     def index
 
-      response = API::Interface.call("leonardo dicaprio")
-      @movies = JSON.parse(response)
-      # @prompt = Prompt.movie_prompt("titanic")
+      # response = API::Interface.call_by_title("wolf%20of%20wall%20street")
+      @prompt = Prompt.movie_prompt("the%20wolf%20of%20wall%20street")
+      byebug
       # response = API::Interface.call("inception")
       #
       # @movies = JSON.parse(response)
