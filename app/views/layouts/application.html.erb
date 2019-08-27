@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
+  <html lang="en" dir="ltr">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/47cc888096.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+
     <title>PossibleSequel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,14 +17,110 @@
   </head>
 
   <body>
-    <% if current_user %>
-    <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
-    <% else %>
-    <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
-    <% end %>
 
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
+    <div class="wrapper">
+        <!----------------------- NAVIGATION ------------------------------------>
+        <nav class="main-nav">
+          <% if current_user %>
+          <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
+          <% else %>
+          <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+          <% end %>
+
+          <%= flash[:alert] %>
+          <%= flash[:notice] %>
+          <ul>
+            <li><a href="#"> Home    </a></li>
+            <li><a href="#"> About   </a></li>
+            <li><a href="#"> Forum   </a></li>
+            <li><a href="#"> Contact </a></li>
+          </ul>
+        </nav>
+
+        <!----------------------- TOP CONTAINER ------------------------------------>
+        <section class="top-container">
+          <header class="container showcase">
+            <%= image_tag("tvscreen.png") %>
+            <%= yield :showcase %>
+
+            <h1>Start Sequeling (SOME TITLE)</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#" class="btn"> Create Sequel (CLICK THIS BUTTON)</a>
+          </header>
+
+          <div class="top-box top-box-a">
+            <h4>Start Sequeling (SOME TITLE)</h4>
+            <p class="(SOME TITLE)">(SOME SORT OF INFO)</p>
+            <a href="" class="btn">CLICK THIS BUTTON</a>
+          </div>
+
+          <div class="top-box top-box-b">
+            <h4>Start Sequeling (SOME TITLE)</h4>
+            <p class="(SOME TITLE)">(SOME SORT OF INFO)</p>
+            <a href="" class="btn">CLICK THIS BUTTON</a>
+          </div>
+        </section>
+        <br><br><br><br>
+
+        <!-------------------------- BOXES SECTION ------------------------------------>
+        <section class="boxes">
+          <div class="box">
+            <i class="fas fa-globe fa-4x"></i>
+            <h3>(SOME SORT OF INFO)</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+
+          <div class="box">
+            <i class="fas fa-paragraph fa-4x"></i>
+            <h3>(SOME SORT OF INFO)</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+
+          <div class="box">
+            <i class="fas fa-film fa-4x"></i>
+            <h3>(SOME SORT OF INFO)</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+
+          <div class="box">
+            <i class="fas fa-users fa-4x"></i>
+            <h3>(SOME SORT OF INFO)</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </section>
+
+        <!------------------------- INFO SECTION ------------------------------------>
+        <!-- <section class="info">
+          <img src="ADD PICTURE LINK HERE" alt="">
+          <div>
+            <h2>Sequel on the web!</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae alias reiciendis deleniti possimus nemo non repellendus.</p>
+            <a href="#" class="btn">CLICK THIS BUTTON</a>
+          </div>
+        </section> -->
+
+        <!----------------Portfolio ---------------------------------------->
+        <!-- <section class="portfolio">
+          <img src="https://source.unsplash.com/random/200x200" alt="">
+          <img src="https://source.unsplash.com/random/201x200" alt="">
+          <img src="https://source.unsplash.com/random/202x200" alt="">
+          <img src="https://source.unsplash.com/random/203x200" alt="">
+          <img src="https://source.unsplash.com/random/204x200" alt="">
+          <img src="https://source.unsplash.com/random/205x200" alt="">
+          <img src="https://source.unsplash.com/random/206x200" alt="">
+          <img src="https://source.unsplash.com/random/207x200" alt="">
+          <img src="https://source.unsplash.com/random/208x200" alt="">
+        </section> -->
+
+        <!---------------------- Footer ------------------------------------------>
+        <footer>
+          <p>This project was done in 2019</p>
+        </footer>
+
+      </div>
+      <!-----------------------WRAPPER ENDS ------------------------------------>
+
+
 
     <%= yield %>
   </body>
