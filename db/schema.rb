@@ -10,9 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_08_26_203636) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
@@ -27,8 +29,8 @@ ActiveRecord::Schema.define(version: 2019_08_26_203636) do
   end
 
   create_table "prompts", force: :cascade do |t|
-    t.string "movie_a"
-    t.string "movie_b"
+    t.hstore "movie_a", default: {}, null: false
+    t.hstore "movie_b", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

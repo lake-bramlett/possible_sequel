@@ -1,4 +1,6 @@
+KEYS = Dotenv.load
 class PromptsController < ApplicationController
+  include API
   before_action :authorize
 
   def secret
@@ -15,7 +17,11 @@ class PromptsController < ApplicationController
   end
 
   def create
-    @prompt = Prompt.create(prompt_params)
+    movie_one = params["prompt"]["movie_a"]
+    movie_two = params["prompt"]["movie_b"]
+    response_one = API::Interface.call_by_title(movie_one)
+    response_two = API::Interface.call_by_title(movie_two)
+    @prompt = Prompt.create(movie_a: {title: JSON.parse(response_one)["Title"], year: JSON.parse(response_one)["Year"], actors: JSON.parse(response_one)["Actors"], plot: JSON.parse(response_one)["Plot"], poster: JSON.parse(response_one)["Poster"]}, movie_b: {title: JSON.parse(response_two)["Title"], year: JSON.parse(response_two)["Year"], actors: JSON.parse(response_two)["Actors"], plot: JSON.parse(response_two)["Plot"], poster: JSON.parse(response_two)["Poster"]})
     if @prompt.save
       flash[:notice] = "Prompt successfully created!"
       redirect_to prompts_path
