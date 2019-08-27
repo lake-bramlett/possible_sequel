@@ -12,7 +12,6 @@ class Prompt < ApplicationRecord
     movie2 = movie2["results"][0]["known_for"][rand(0..(length-1))]["title"]
     response2 = API::Interface.call_by_title(movie2)
     movie2 = JSON.parse(response2)
-    byebug
     @movies.push(movie2)
     return @movies
   end

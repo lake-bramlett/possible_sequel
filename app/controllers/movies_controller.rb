@@ -10,8 +10,8 @@ class MoviesController < ApplicationController
       @prompt = Prompt.movie_prompt("the%20wolf%20of%20wall%20street")#change to Movies obj or move to prompt controller
       movie_one = "titanic"
       movie_two = "inception"
-      response_one = API::Interface.call(movie_one)
-      response_two = API::Interface.call(movie_two)
+      response_one = API::Interface.call_by_title(movie_one)
+      response_two = API::Interface.call_by_title(movie_two)
       @response_one = JSON.parse(response_one)
       @response_two = JSON.parse(response_two)
       @title_one = JSON.parse(response_one)["Title"]
