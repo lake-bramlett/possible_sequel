@@ -25,9 +25,6 @@ class Prompt < ApplicationRecord
     @prompt = [response_one, response_two]
   end
 
-
-
-
 end
 
 private
