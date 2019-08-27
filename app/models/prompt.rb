@@ -16,6 +16,17 @@ class Prompt < ApplicationRecord
     return @movies
   end
 
+  def self.manual_prompt(movie_one, movie_two)
+    response_one = API::Interface.call_by_title(movie_one)
+    response_two = API::Interface.call_by_title(movie_two)
+    response_one = JSON.parse(response_one)
+    response_two = JSON.parse(response_two)
+
+    @prompt = [response_one, response_two]
+  end
+
+
+
 
 end
 

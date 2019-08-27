@@ -1,4 +1,3 @@
-
 class PromptsController < ApplicationController
   before_action :authorize
 
@@ -53,6 +52,11 @@ class PromptsController < ApplicationController
     @prompt = Prompt.find(params[:id])
     @prompt.destroy
     redirect_to prompts_path
+  end
+
+  def random
+    @prompt = Prompt.random_prompt("the%20wolf%20of%20wall%20street")#Random movie gen, only ranfomizes second movie right now---change to Movies obj or move to prompt controller
+    render :index
   end
 
 
