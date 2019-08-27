@@ -58,6 +58,7 @@ class PromptsController < ApplicationController
 
   def random
     @prompt = Prompt.random_prompt("the%20wolf%20of%20wall%20street")#Random movie gen, only ranfomizes second movie right now---change to Movies obj or move to prompt controller
+    byebug
     render :index
   end
 
