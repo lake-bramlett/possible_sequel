@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_08_26_203636) do
-=======
 ActiveRecord::Schema.define(version: 2019_08_27_161504) do
->>>>>>> 801659ab406f950e0f399f978e97eac465d7a109
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
