@@ -308,7 +308,7 @@
         1,
         null,
         1,
-        12,
+        14,
         8,
         null,
         null,
@@ -546,25 +546,25 @@
         1,
         null,
         1,
-        2,
+        4,
         null,
         null,
         1,
-        2,
-        2,
+        3,
+        3,
         2,
         2,
         2,
         null,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         null,
         1,
         null,
         1,
-        2,
+        3,
         null,
         null
       ],
@@ -719,6 +719,12 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/Guest/Desktop/possible-sequel/spec/helpers/movies_helper_spec.rb": [
@@ -769,6 +775,6 @@
         null
       ]
     },
-    "timestamp": 1566939675
+    "timestamp": 1566940144
   }
 }

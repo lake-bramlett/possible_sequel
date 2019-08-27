@@ -27,10 +27,16 @@ end
 
 describe 'user route errors' do
 
+  it 'errors for empty sign up fields' do
+    visit '/signup'
+    click_button('Sign Up')
+    expect(page).to have_content("There was a problem signing up.")
+  end
+
   it 'errors for empty sign in fields' do
     visit '/signin'
     click_button('Sign in')
-    expect(page).to have_content("There was a problem signing up.")
+    expect(page).to have_content("There was a problem signing in.")
   end
 
 end
