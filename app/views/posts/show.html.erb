@@ -1,0 +1,9 @@
+<h1>Post <%= @post.id %></h1>
+<h3><%= @post.body %></h3>
+
+<p><%= link_to "Edit post", edit_prompt_post_path(@prompt, @post) %></p>
+<p><%= link_to "Delete post", prompt_post_path(@prompt, @post),
+  :data => {:confirm => "Are you sure?",
+  :method => "delete"} %></p>
+
+  <p><%= link_to "Return to prompt", prompt_path(@prompt) %></p>

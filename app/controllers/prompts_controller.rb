@@ -55,7 +55,11 @@ class PromptsController < ApplicationController
 
   def update
     @prompt = Prompt.find(params[:id])
-    if @prompt.update(prompt_params)
+    movie_one = params["prompt"]["movie_a"]
+    movie_two = params["prompt"]["movie_b"]
+    response_one = API::Interface.call_by_title(movie_one)
+    response_two = API::Interface.call_by_title(movie_two)
+    if @prompt.update(movie_a: {title: JSON.parse(response_one)["Title"], year: JSON.parse(response_one)["Year"], actors: JSON.parse(response_one)["Actors"], plot: JSON.parse(response_one)["Plot"], poster: JSON.parse(response_one)["Poster"]}, movie_b: {title: JSON.parse(response_two)["Title"], year: JSON.parse(response_two)["Year"], actors: JSON.parse(response_two)["Actors"], plot: JSON.parse(response_two)["Plot"], poster: JSON.parse(response_two)["Poster"]})
       redirect_to prompts_path
     else
       render :edit
@@ -72,6 +76,8 @@ class PromptsController < ApplicationController
     @prompt = Prompt.random_prompt("the%20wolf%20of%20wall%20street")#Random movie gen, only ranfomizes second movie right now---change to Movies obj or move to prompt controller
     render :index
   end
+
+
 
 
   private
