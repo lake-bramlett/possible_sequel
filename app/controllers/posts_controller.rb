@@ -7,8 +7,11 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
+    @user = current_user
+
     @prompt = Prompt.find(params[:prompt_id])
-    @post = @prompt.posts.new(post_params)
+    @post = @prompt.posts.new(body: post_params["body"], user_id: @user.id)
     if @prompt.save
       flash[:notice] = "Post successfully added!"
       redirect_to prompt_path(@prompt)
@@ -47,6 +50,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:body, :votes)
+    params.require(:post).permit(:body)
   end
 end

@@ -1,1 +1,13 @@
-Well done
+<h1>Prompts:</h1>
+
+<% if @prompts.any? %>
+  <ul>
+    <% @prompts.each do |prompt| %>
+      <li><%= link_to prompt.movie_a["title"], prompt_path(prompt) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no prompts yet.</p>
+<% end %>
+
+<p><%= link_to "Add a prompt", new_prompt_path %></p>

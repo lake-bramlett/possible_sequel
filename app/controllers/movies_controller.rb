@@ -3,18 +3,28 @@ class MoviesController < ApplicationController
   include API
 
     def index
-      movie_one = "titanic"
-      movie_two = "inception"
-      response_one = API::Interface.call(movie_one)
-      response_two = API::Interface.call(movie_two)
-      @response_one = JSON.parse(response_one)
-      @response_two = JSON.parse(response_two)
-      @title_one = JSON.parse(response_one)["Title"]
-      @title_two = JSON.parse(response_two)["Title"]
-      @actors_one = JSON.parse(response_one)["Actors"]
-      @actors_two = JSON.parse(response_two)["Actors"]
-      @plot_one = JSON.parse(response_one)["Plot"]
-      @plot_two = JSON.parse(response_two)["Plot"]
+
     end
 
+    def manual
+      @prompt = Prompt.manual_prompt("titanic", "inception")
+      @title_one = @prompt[0]["Title"]
+      @title_two = @prompt[1]["Title"]
+      @actors_one = @prompt[0]["Actors"]
+      @actors_two = @prompt[1]["Actors"]
+      @plot_one = @prompt[0]["Plot"]
+      @plot_two = @prompt[1]["Plot"]
+      render :index
+    end
+
+    def random
+      @prompt = Prompt.random_prompt("the%20wolf%20of%20wall%20street")#send down to #random
+      @title_one = @prompt[0]["Title"]
+      @title_two = @prompt[1]["Title"]
+      @actors_one = @prompt[0]["Actors"]
+      @actors_two = @prompt[1]["Actors"]
+      @plot_one = @prompt[0]["Plot"]
+      @plot_two = @prompt[1]["Plot"]
+      render :index
+    end
 end

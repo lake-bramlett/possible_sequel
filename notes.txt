@@ -6,3 +6,7 @@ Using the API:
 Please append it to all of your API requests,
 
 OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=5316d316
+
+-------to fix migration err----------
+possible-sequel_development=# ALTER TABLE prompts ALTER COLUMN movie_a TYPE hstore USING (movie_a::hstore);
+possible-sequel_development=# ALTER TABLE prompts ALTER COLUMN movie_b TYPE hstore USING (movie_b::hstore);
