@@ -74,6 +74,8 @@ class PromptsController < ApplicationController
   end
 
 
+
+
   private
   def prompt_params
     params.require(:prompt).permit(:movie_a_url, :movie_b_url)
