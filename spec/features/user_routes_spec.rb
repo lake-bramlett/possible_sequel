@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe 'User routes' do
 
-  before do
+  before :all do
+    User.destroy_all
     visit '/signup'
     fill_in(:user_username, :with => 'Tester')
     fill_in(:user_email, :with => 'test@test.com')
@@ -23,7 +24,7 @@ describe 'User routes' do
     expect(page).to have_content("Sign out")
   end
 
-  it 'creates a user session' do
+  it 'destroys a user session' do
     visit '/signout'
     expect(page).to have_content("You've signed out.")
     expect(page).to have_content("Sign in")
