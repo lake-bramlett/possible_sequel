@@ -37,26 +37,6 @@
           </ul>
         </nav>
 
-        <!----------------------- TOP CONTAINER ------------------------------------>
-        <section class="top-container">
-          <header class="container showcase">
-            <%= image_tag("tvscreen.png") %>
-            <%= yield :showcase %>
-
-            <h1>Start Sequeling (SOME TITLE)</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" class="btn"> Create Sequel (CLICK THIS BUTTON)</a>
-          </header>
-
-          <div class="top-box top-box-a">
-            <h4>Start Sequeling (SOME TITLE)</h4>
-            <p class="(SOME TITLE)">(SOME SORT OF INFO)</p>
-            <a href="" class="btn">CLICK THIS BUTTON</a>
-          </div>
-        </nav>
-      </div>
-    </div>
-
     <!----------------------- TOP CONTAINER ------------------------------------>
     <section class="top-container">
       <div class="container showcase">
@@ -67,12 +47,14 @@
       </div>
 
       <div class="top-box top-box-a">
+        <%= yield :showcase %>
         <h4>Start Sequeling (SOME TITLE)</h4>
         <p class="(SOME TITLE)">(SOME SORT OF INFO)</p>
         <a href="" class="btn">CLICK THIS BUTTON</a>
       </div>
 
       <div class="top-box top-box-b">
+        <%= yield :showcase %>
         <h4>Start Sequeling (SOME TITLE)</h4>
         <p class="(SOME TITLE)">(SOME SORT OF INFO)</p>
         <a href="" class="btn">CLICK THIS BUTTON</a>
