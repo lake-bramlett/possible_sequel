@@ -1,6 +1,14 @@
 class Prompt < ApplicationRecord
   include API
   has_many :posts, dependent: :destroy
+  scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
+  # scope :most_posts, -> {(
+  #   select("prompts.id, prompts.movie_a["title"], count(posts.id) as posts_count")
+  #   .joins(:posts)
+  #   .group("prompts.id")
+  #   .order("posts_count DESC")
+  #   .limit(10)
+  #   )}
 
   def self.random_prompt
     movies_array = File.foreach('movies.txt').map { |line| line.split(", \n") }

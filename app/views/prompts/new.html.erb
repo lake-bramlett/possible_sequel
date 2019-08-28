@@ -1,7 +1,7 @@
 <%= form_for @prompt do |f| %>
   <%= f.label "Movie A" %>
-  <%= f.text_field :movie_a, :value => @prompt["movie_a"]["title"] %>
+  <%= f.text_field :movie_a, :value => nil %>
   <%= f.label "Movie B" %>
-  <%= f.text_field :movie_b, :value => @prompt["movie_b"]["title"] %>
+  <%= f.text_field :movie_b, :value => nil %>
   <%= f.submit "Create" %>
 <% end %>
