@@ -1,20 +1,23 @@
-<h1 class="page-header">Possible Sequel</h1><br />
-<%= @prompt[0]%>
-<br /><br>
-<%= @prompt[1]%>
-
 <% content_for :showcase do %>
-<%= @response_one %>
+<h2>Possible Sequel</h2>
+  <%= form_for [@prompt, @post] do |f| %>
+    <%= f.label :body %>
+    <%= f.text_area :body, :value => nil %>
+    <p><%= f.submit %></p>
+  <% end %>
+<% end %>
+
+<% content_for :movie_one do %>
   <%= image_tag @poster_one %>
-  <h1>Title:</h1> <%= @title_one %>
-  <h2>Actors:</h2> <%= @actors_one %>
-  <h2>Plot:</h2> <%= @plot_one %>
+  <h1>Title:</h1> <p><%= @title_one %></p>
+  <h2>Actors:</h2> <p><%= @actors_one %></p>
+  <h2>Plot:</h2> <p><%= @plot_one %></p>
+<% end %>
 
 
-<%= @response_two %>
-<%= image_tag @poster_two %>
-<h1>Title:</h1> <%= @title_two %>
-<h2>Actors:</h2> <%= @actors_two %>
-<h2>Plot:</h2> <%= @plot_two %>
-
+<% content_for :movie_two do %>
+  <%= image_tag @poster_two %>
+  <h1>Title:</h1> <p><%= @title_two %></p>
+  <h2>Actors:</h2> <p><%= @actors_two %></p>
+  <h2>Plot:</h2> <p><%= @plot_two %></p>
 <% end %>
