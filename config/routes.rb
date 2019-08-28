@@ -7,8 +7,10 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  get "/", to: "movies#manual"
+  get "/", to: "movies#from_db"
   get "/random", to: 'movies#random'#generate random prompt
+  get "/save_random", to: 'movies#save_random'
+
   get "/about", to: "pages#show", as: "about"
   get "/contact", to: "pages#contact", as: "contact"
 

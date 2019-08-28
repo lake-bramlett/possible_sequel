@@ -1,0 +1,25 @@
+<% content_for :showcase do %>
+<div class="headline">
+  <h2>Possible Sequel</h2>
+</div>
+<%= link_to "Use This Prompt", new_prompt_path %>
+<% end %>
+
+<% content_for :movie_one do %>
+  <div class="top-box top-box-a">
+    <%= image_tag @poster_one %>
+    <h1>Title:</h1> <p><%= @title_one %></p>
+    <h2>Actors:</h2> <p><%= @actors_one %></p>
+    <h2>Plot:</h2> <p><%= @plot_one %></p>
+  </div>
+<% end %>
+
+
+<% content_for :movie_two do %>
+  <div class="top-box top-box-b">
+    <%= image_tag @poster_two %>
+    <h1>Title:</h1> <p><%= @title_two %></p>
+    <h2>Actors:</h2> <p><%= @actors_two %></p>
+    <h2>Plot:</h2> <p><%= @plot_two %></p>
+  </div>
+<% end %>
