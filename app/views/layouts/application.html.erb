@@ -37,30 +37,26 @@
           </ul>
         </nav>
 
-    <!----------------------- TOP CONTAINER ------------------------------------>
-    <section class="top-container">
-      <div class="container showcase">
-        <%= yield :showcase %>
-        <h1>Start Sequeling (SOME TITLE)</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <a href="#" class="btn" id="createSequel"> Create Sequel (CLICK THIS BUTTON)</a>
-      </div>
+        <!----------------------- TOP CONTAINER ------------------------------------>
+        <section class="top-container">
+          <header class="container showcase">
+            <%= yield :showcase %>
 
-      <!-- <div class="top-box top-box-a">
 
-        <h4>Start Sequeling (SOME TITLE)</h4>
-        <p class="(SOME TITLE)">(SOME SORT OF INFO)</p>
-        <a href="" class="btn">CLICK THIS BUTTON</a>
-      </div>
 
-      <div class="top-box top-box-b">
 
-        <h4>Start Sequeling (SOME TITLE)</h4>
-        <p class="(SOME TITLE)">(SOME SORT OF INFO)</p>
-        <a href="" class="btn">CLICK THIS BUTTON</a>
-      </div> -->
-    </section>
-    <!-- <br><br><br><br> -->
+
+          </header>
+
+          <div class="top-box top-box-a">
+            <%= yield :movie_one %>
+          </div>
+
+          <div class="top-box top-box-b">
+            <%= yield :movie_two %>
+          </div>
+        </section>
+
 
     <!-------------------------- BOXES SECTION ------------------------------------>
     <section class="boxes">
