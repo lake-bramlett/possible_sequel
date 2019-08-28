@@ -1,9 +1,21 @@
-<h1>Prompts:</h1>
+<h1>Most Recent Prompts</h1>
+<% if @prompts.three_most_recent.any? %>
+  <ul>
+    <% @prompts.three_most_recent.each do |prompt| %>
+      <li><%= link_to "#{prompt.movie_a["title"]} and #{prompt.movie_b["title"]}", prompt_path(prompt) %></li>
+      <% end %>
+  </ul>
+  <% else %>
+  <p>There are no prompts yet.</p>
+  <% end %>
+
+
+<h1>All Prompts:</h1>
 
 <% if @prompts.any? %>
   <ul>
     <% @prompts.each do |prompt| %>
-      <li><%= link_to prompt.movie_a["title"], prompt_path(prompt) %></li>
+      <li><%= link_to "#{prompt.movie_a["title"]} and #{prompt.movie_b["title"]}", prompt_path(prompt) %></li>
     <% end %>
   </ul>
 <% else %>
