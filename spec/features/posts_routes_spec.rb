@@ -1,15 +1,15 @@
 require 'rails_helper'
-# 
+
 # describe 'posts routes' do
 #
-#   before do
-#     FactoryBot.find_definitions
-#     user = FactoryBot.create(:user)
-#     visit ('/signin')
-#     fill_in(:email, :with => 'test@test.com')
-#     fill_in(:password, :with => 123456)
-#     click_button('Sign in')
-#   end
+#   # before do
+#   #   FactoryBot.find_definitions
+#   #   FactoryBot.create(:user)
+#   #   visit ('/signin')
+#   #   fill_in(:email, :with => 'test@test.com')
+#   #   fill_in(:password, :with => 123456)
+#   #   click_button('Sign in')
+#   # end
 #
 #   it 'creates a new post' do
 #     FactoryBot.find_definitions
