@@ -9,6 +9,17 @@
   <p>There are no prompts yet.</p>
   <% end %>
 
+<h1>Most Posted On Prompts</h1>
+<% if @prompts.most_posts.any? %>
+  <ul>
+    <% @prompts.most_posts.each do |prompt| %>
+      <li><%= link_to "#{prompt.movie_a["title"]} and #{prompt.movie_b["title"]}", prompt_path(prompt) %></li>
+        <% end %>
+  </ul>
+  <% else %>
+  <p>There are no prompts yet.</p>
+  <% end %>
+
 
 <h1>All Prompts:</h1>
 
