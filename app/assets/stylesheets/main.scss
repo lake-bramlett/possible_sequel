@@ -1,4 +1,10 @@
 /* CSS Variables */
+@import url('https://fonts.googleapis.com/css?family=Days+One|Hind+Madurai&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Sarpanch:900');
+
+$rotationAmt: -6;
+
 :root {
   --primary: #ddd;
   --dark: #333;
@@ -16,6 +22,19 @@ body {
   background: #ccc;
   margin: 30px 50px;
   line-height: 1.4;
+  background: linear-gradient(to bottom, #000, #0a0391, #fff);
+}
+header {
+  //TEXT SLANTER
+  // transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
+  grid-area: text;
+  font-family: 'Sarpanch', sans-serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 30px;
+  color: #BF200B;
+  // text-shadow: 1vmin 1vmin 0 #F59F22, -1vmin -1vmin 0 #6C3E2F;
+  text-align: right;
 }
 
 .btn {
@@ -36,25 +55,6 @@ img {
 }
 
 /*************************** NAVIGATION ****************************/
-.main-nav ul {
-  display: grid;
-  grid-gap: 20px;
-  padding: 0;
-  list-style: none;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.main-nav a {
-  background: var(--primary);
-  display: block;
-  text-decoration: none;
-  padding: 0.8rem;
-  text-align: center;
-  color: var(--dark);
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  box-shadow: var(--shadow);
-}
 
 .main-nav a:hover {
   background: var(--dark);
@@ -82,7 +82,8 @@ img {
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  box-shadow: var(--shadow);
+  // box-shadow: var(--shadow);
+  // THIS IS THE AWFUL BOX OUTLINE
 
   position: relative;
   text-align: center;
@@ -119,7 +120,8 @@ img {
 }
 
 .top-box-a {
-  grid-area: top-box-a;
+  grid-area: float left;
+
 }
 
 .top-box-b {
