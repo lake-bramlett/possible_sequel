@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   end
 
   get "/", to: "movies#from_db"
-  get "/random", to: 'prompts#random'#generate random prompt
+  get "/random", to: 'movies#random'#generate random prompt
+  get "/save_random", to: 'movies#save_random'
+
   get "/about", to: "pages#show", as: "about"
   get "/contact", to: "pages#contact", as: "contact"
 

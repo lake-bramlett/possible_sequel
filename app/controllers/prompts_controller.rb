@@ -95,14 +95,39 @@ class PromptsController < ApplicationController
                             )
     if @prompt.save
       flash[:notice] = "Prompt successfully created!"
-      redirect_to prompts_path
+      render :random
     else
       flash[:alert] = "Please fill out all fields"
       render :new
     end
   end
 
-
+def save_random
+  movie_one = params["prompt"]["movie_a"]
+  movie_two = params["prompt"]["movie_b"]
+  response_one = JSON.parse(API::Interface.call_by_title(movie_one))
+  response_two = JSON.parse(API::Interface.call_by_title(movie_two))
+  @prompt = Prompt.create(movie_a: {
+                            title: response_one["Title"],
+                            year: response_one["Year"],
+                            actors: response_one["Actors"],
+                            plot: response_one["Plot"],
+                            poster: response_one["Poster"]},
+                          movie_b: {
+                            title: response_two["Title"],
+                            year: response_two["Year"],
+                            actors: response_two["Actors"],
+                            plot: response_two["Plot"],
+                            poster: response_two["Poster"]}
+                          )
+  if @prompt.save
+    flash[:notice] = "Prompt successfully created!"
+    redirect_to prompts_path
+  else
+    flash[:alert] = "Please fill out all fields"
+    render :new
+  end
+end
 
 
   private
