@@ -25,14 +25,15 @@ body {
   background: linear-gradient(to bottom, #000, #0a0391, #fff);
 }
 header {
-  transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
+  //TEXT SLANTER
+  // transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
   grid-area: text;
   font-family: 'Sarpanch', sans-serif;
-  font-size: 90px;
+  font-size: 20px;
   margin: 0;
   padding: 30px;
   color: #BF200B;
-  text-shadow: 1vmin 1vmin 0 #F59F22, -1vmin -1vmin 0 #6C3E2F;
+  // text-shadow: 1vmin 1vmin 0 #F59F22, -1vmin -1vmin 0 #6C3E2F;
   text-align: right;
 }
 
@@ -81,7 +82,8 @@ img {
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  box-shadow: var(--shadow);
+  // box-shadow: var(--shadow);
+  // THIS IS THE AWFUL BOX OUTLINE
 
   position: relative;
   text-align: center;
