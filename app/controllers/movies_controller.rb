@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
 
     end
 
-    def manual
+    def from_db
       @post = Post.new
       prompt = ActiveRecord::Base.connection.execute("SELECT * FROM prompts ORDER BY random() LIMIT(1)").first
       @prompt = Prompt.find(prompt["id"])
@@ -22,6 +22,7 @@ class MoviesController < ApplicationController
     end
 
     def random
+      @post = Post.new
       @prompt = Prompt.random_prompt#send down to #random
       @title_one = @prompt[0]["Title"]
       @title_two = @prompt[1]["Title"]
