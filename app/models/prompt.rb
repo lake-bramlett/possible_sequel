@@ -13,7 +13,6 @@ class Prompt < ApplicationRecord
     movie2 = find_similar_movie(movie1)
     length = movie2["results"][0]["known_for"].length
     movie2 = movie2["results"][0]["known_for"][rand(0..(length-1))]["title"]
-    byebug
     response2 = API::Interface.call_by_title(movie2)
     movie2 = JSON.parse(response2)
     @movies.push(movie2)
