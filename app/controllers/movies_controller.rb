@@ -8,7 +8,8 @@ class MoviesController < ApplicationController
 
     def manual
       @post = Post.new
-      @prompt = Prompt.find(1)
+      prompt = ActiveRecord::Base.connection.execute("SELECT * FROM prompts ORDER BY random() LIMIT(1)").first
+      @prompt = Prompt.find(prompt["id"])
       @title_one = @prompt["movie_a"]["title"]
       @title_two = @prompt["movie_b"]["title"]
       @actors_one = @prompt["movie_a"]["actors"]
