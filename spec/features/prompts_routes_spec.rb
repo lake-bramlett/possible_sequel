@@ -12,6 +12,7 @@ end
 describe 'prompt routes' do
 
   before :all do
+    visit ('/signout')
     User.destroy_all
     FactoryBot.find_definitions
     FactoryBot.create(:user)
@@ -21,7 +22,7 @@ describe 'prompt routes' do
     click_button('Sign in')
   end
 
-  after :all do
+  after :each do
     visit ('/signout')
   end
 
@@ -30,12 +31,17 @@ describe 'prompt routes' do
     expect(page).to have_content('There are no prompts yet.')
   end
 
-  # it 'creates a prompt' do
-  #   visit new_prompt_path
-  #   fill_in(:movie_a, :with => 'Titanic')
-  #   fill_in(:movie_b, :with => 'Seven')
-  #   click_button('Create')
-  #   expect(page).to have_content('Prompt successfully created!')
-  # end
+  it 'creates a prompt' do
+    visit ('/signin')
+    fill_in(:email, :with => 'test@test.com')
+    fill_in(:password, :with => 123456)
+    click_button('Sign in')
+    visit new_prompt_path
+    expect(page).to have_content('test@test.com')
+    fill_in('prompt[movie_a]', :with => 'Titanic')
+    fill_in('prompt[movie_b]', :with => 'Seven')
+    click_button('Create')
+    expect(page).to have_content('Prompt successfully created!')
+  end
 
 end
