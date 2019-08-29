@@ -1,8 +1,7 @@
-<% content_for :showcase do %>
-<br><h1<%= @user.email %></h1>
-
+<h1><%= @user.username %></h1>
+<h3><%= @user.email %></h3>
 <% if @user.posts.any? %>
-<h4>Here are the posts this user has submitted:</h4>
+<h4>Here are the posts <%= @user.username %> has submitted:</h4>
 
 <% @user.posts.each do |post| %>
   <ul>
@@ -18,5 +17,3 @@
 
 
 <p><%= link_to "Return to users", users_path %></p>
-
-<% end %>
