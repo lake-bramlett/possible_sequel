@@ -1,0 +1,22 @@
+<% content_for :showcase do %>
+<br><h1<%= @user.email %></h1>
+
+<% if @user.posts.any? %>
+<h4>Here are the posts this user has submitted:</h4>
+
+<% @user.posts.each do |post| %>
+  <ul>
+    <li>
+      <%= link_to post.body, prompt_path(post.prompt_id) %>
+    </li>
+  </ul>
+<% end %>
+<% else %>
+<p>User has no prompts.</p>
+<% end %>
+
+
+
+<p><%= link_to "Return to users", users_path %></p>
+
+<% end %>
