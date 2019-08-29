@@ -1,4 +1,7 @@
+
 @import 'movies';
+
+
 
 a {
   color: rgb(215, 226, 98);
@@ -12,6 +15,9 @@ body {
 
 nav h1 {
   font-family: 'Bungee Shade', cursive;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
 }
 
 header {
