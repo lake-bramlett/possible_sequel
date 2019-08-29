@@ -7,19 +7,19 @@ class MoviesController < ApplicationController
     end
 
     def from_db
-      @post = Post.new
-      prompt = ActiveRecord::Base.connection.execute("SELECT * FROM prompts ORDER BY random() LIMIT(1)").first
-      @answers = Post.get_by_prompt(prompt["id"])
-      @prompt = Prompt.find(prompt["id"])
-      @title_one = @prompt["movie_a"]["title"]
-      @title_two = @prompt["movie_b"]["title"]
-      @actors_one = @prompt["movie_a"]["actors"]
-      @actors_two = @prompt["movie_b"]["actors"]
-      @plot_one = @prompt["movie_a"]["plot"]
-      @plot_two = @prompt["movie_b"]["plot"]
-      @poster_one = @prompt["movie_a"]["poster"]
-      @poster_two = @prompt["movie_b"]["poster"]
-      render :index
+        @post = Post.new
+        prompt = ActiveRecord::Base.connection.execute("SELECT * FROM prompts ORDER BY random() LIMIT(1)").first
+        @answers = Post.get_by_prompt(prompt["id"])
+        @prompt = Prompt.find(prompt["id"])
+        @title_one = @prompt["movie_a"]["title"]
+        @title_two = @prompt["movie_b"]["title"]
+        @actors_one = @prompt["movie_a"]["actors"]
+        @actors_two = @prompt["movie_b"]["actors"]
+        @plot_one = @prompt["movie_a"]["plot"]
+        @plot_two = @prompt["movie_b"]["plot"]
+        @poster_one = @prompt["movie_a"]["poster"]
+        @poster_two = @prompt["movie_b"]["poster"]
+        render:index
     end
 
     def random

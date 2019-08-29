@@ -10,7 +10,11 @@
       <h4>How is <span class="movie-title"><%= @title_two %></span> the sequel to <span class="movie-title"><%= @title_one %></span>?</h4>
       <%= form_for [@prompt, @post] do |f| %>
       <%= f.text_area :body, :value => nil %>
-      <p><%= f.submit "Exlpain It" %></p>
+        <% if current_user %>
+          <p><%= f.submit "Exlpain It" %></p>
+        <% else %>
+          <p><%= link_to "Sign in to post", signin_path %></p>
+        <% end %>
       <% end %>
     </div>
     <div class="movie-2">
@@ -25,7 +29,9 @@
     <div class="answer-border">
       <div class="answer-card">
         <p><%= link_to User.find(answer["user_id"]).username, user_path(answer["user_id"]) %>: </p>
-        <p>"<%= answer["body"] %>"</p>
+        <div class="body">
+          <p>"<%= answer["body"] %>"</p>
+        </div>
         <p>Votes: <%= answer["votes"] %></p>
         <p>Vote</p>
       </div>

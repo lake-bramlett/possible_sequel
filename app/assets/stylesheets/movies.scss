@@ -48,10 +48,16 @@ textarea {
   background-color: gray;
   padding: 5px;
   display: inline-block;
-  width: 33%
+  width: 31%;
+  margin: 1%;
 }
 
 .answer-card {
   background-color: lightgrey;
   padding: 5px;
+}
+
+.answer-card .body {
+  height: 4rem;
+  overflow: scroll;
 }
