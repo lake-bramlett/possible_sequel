@@ -10,11 +10,7 @@
       <h4>How is <span class="movie-title"><%= @title_two %></span> the sequel to <span class="movie-title"><%= @title_one %></span>?</h4>
       <%= form_for [@prompt, @post] do |f| %>
       <%= f.text_area :body, :value => nil %>
-        <% if current_user %>
-          <p><%= f.submit "Exlpain It" %></p>
-        <% else %>
-          <p><%= link_to "Sign in to post", signin_path %></p>
-        <% end %>
+      <p><%= f.submit "Exlpain It" %></p>
       <% end %>
     </div>
     <div class="movie-2">
@@ -33,7 +29,7 @@
           <p>"<%= answer["body"] %>"</p>
         </div>
         <p>Votes: <%= answer["votes"] %></p>
-        <p>Vote</p>
+        <p><%= link_to "Vote", vote_path(answer), :method => :put %></p>
       </div>
     </div>
    <% end %>
