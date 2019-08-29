@@ -1,37 +1,33 @@
-<% content_for :showcase do %>
-<div class="headline">
-  <h2>Possible Sequel</h2>
-</div>
-<div class ="form">
-  <%= form_for [@prompt, @post] do |f| %>
-    <%= f.text_area :body, :value => nil %>
-    <p><%= f.submit %></p>
-  <% end %>
-</div>
-<div class="posts">
-  <h3>Answers</h3>
-   <% @answers.each do |answer| %>
-    <p>"<%= answer["body"] %>"</p>
-    <p>Vote</p>
+<div class="index-box">
+  <div class="top">
+    <div class="movie-1">
+      <%= image_tag @poster_one %>
+      <div class="info-box">
+        <span><%= @plot_one %></span>
+      </div>
+    </div>
+    <div class="answer-form">
+      <h4>How is <span class="movie-title"><%= @title_two %></span> the sequel to <span class="movie-title"><%= @title_one %></span>?</h4>
+      <%= form_for [@prompt, @post] do |f| %>
+      <%= f.text_area :body, :value => nil %>
+      <p><%= f.submit "Exlpain It" %></p>
+      <% end %>
+    </div>
+    <div class="movie-2">
+      <%= image_tag @poster_two %>
+      <div class="info-box">
+        <span><%= @plot_two %></span>
+      </div>
+    </div>
+  </div>
+  <div class="answers">
+    <% @answers.each do |answer| %>
+    <div class="answer-card">
+      <p><%= link_to User.find(answer["user_id"]).username, user_path(answer["user_id"]) %> said: </p>
+      <p>"<%= answer["body"] %>"</p>
+      <p>Votes: <%= answer["votes"] %></p>
+      <p>Vote</p>
+    </div>
    <% end %>
+  </div>
 </div>
-<% end %>
-
-<% content_for :movie_one do %>
-  <div class="top-box top-box-a">
-    <%= image_tag @poster_one %>
-    <h1>Title:</h1> <p><%= @title_one %></p>
-    <h2>Actors:</h2> <p><%= @actors_one %></p>
-    <h2>Plot:</h2> <p><%= @plot_one %></p>
-  </div>
-<% end %>
-
-
-<% content_for :movie_two do %>
-  <div class="top-box top-box-b">
-    <%= image_tag @poster_two %>
-    <h1>Title:</h1> <p><%= @title_two %></p>
-    <h2>Actors:</h2> <p><%= @actors_two %></p>
-    <h2>Plot:</h2> <p><%= @plot_two %></p>
-  </div>
-<% end %>

@@ -49,7 +49,17 @@ class PromptsController < ApplicationController
   end
 
   def show
+    @post = Post.new
     @prompt = Prompt.find(params[:id])
+    @answers = Post.get_by_prompt(@prompt["id"])
+    @title_one = @prompt["movie_a"]["title"]
+    @title_two = @prompt["movie_b"]["title"]
+    @actors_one = @prompt["movie_a"]["actors"]
+    @actors_two = @prompt["movie_b"]["actors"]
+    @plot_one = @prompt["movie_a"]["plot"]
+    @plot_two = @prompt["movie_b"]["plot"]
+    @poster_one = @prompt["movie_a"]["poster"]
+    @poster_two = @prompt["movie_b"]["poster"]
     render :show
   end
 
