@@ -7,6 +7,9 @@
   <ul>
     <li>
       <%= link_to post.body, prompt_path(post.prompt_id) %>
+      <% if current_user.id == post.user_id %>
+        <p><%= link_to "Delete Post", user_post_path(post.user_id, post.id), :method => :delete %></p>
+      <% end %>
     </li>
   </ul>
 <% end %>
