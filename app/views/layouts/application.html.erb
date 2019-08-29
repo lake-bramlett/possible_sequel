@@ -23,13 +23,16 @@
             <span><%= link_to "Prompts", prompts_path %></span>
             <span><%= link_to "About", prompts_path %></span>
             <span><%= link_to "Contact", prompts_path %></span>
+            <%= yield :nav %>
         </div>
       </nav>
     </header>
-    <div class="content">
-      <%= yield %>
+    <div class="flashes">
       <%= flash[:alert] %>
       <%= flash[:notice] %>
+    </div>
+    <div class="content">
+      <%= yield %>
     </div>
   </body>
 </html>

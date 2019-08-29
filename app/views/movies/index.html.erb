@@ -2,25 +2,32 @@
   <div class="top">
     <div class="movie-1">
       <%= image_tag @poster_one %>
-      <span><%= @plot_one %> </span>
+      <div class="info-box">
+        <span><%= @plot_one %></span>
+      </div>
     </div>
     <div class="answer-form">
       <h4>How is <span class="movie-title"><%= @title_two %></span> the sequel to <span class="movie-title"><%= @title_one %></span>?</h4>
       <%= form_for [@prompt, @post] do |f| %>
       <%= f.text_area :body, :value => nil %>
-      <p><%= f.submit %></p>
+      <p><%= f.submit "Exlpain It" %></p>
       <% end %>
     </div>
     <div class="movie-2">
       <%= image_tag @poster_two %>
-      <span><%= @plot_two %> </span>
+      <div class="info-box">
+        <span><%= @plot_two %></span>
+      </div>
     </div>
   </div>
   <div class="answers">
     <% @answers.each do |answer| %>
-    <p><%= User.find(answer["user_id"]).username %> said: </p>
-    <p>"<%= answer["body"] %>"</p>
-    <p>Vote</p>
+    <div class="answer-card">
+      <p><%= link_to User.find(answer["user_id"]).username, user_path(answer["user_id"]) %> said: </p>
+      <p>"<%= answer["body"] %>"</p>
+      <p>Votes: <%= answer["votes"] %></p>
+      <p>Vote</p>
+    </div>
    <% end %>
   </div>
 </div>
