@@ -4,10 +4,15 @@
 
 textarea {
   width: 80%;
+  height: 20rem;
 }
 
 .index-box img {
   width: 100%
+}
+
+.movie-1, .movie-2, .answer-form {
+  vertical-align: top;
 }
 
 .movie-1 {
@@ -27,4 +32,20 @@ textarea {
 }
 
 .answers {
+  height: 30rem;
+  overflow: scroll;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.answer-border {
+  background-color: gray;
+  padding: 5px;
+  display: inline-block;
+  width: 33%
+}
+
+.answer-card {
+  background-color: lightgrey;
+  padding: 5px;
 }
