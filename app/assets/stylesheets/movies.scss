@@ -45,7 +45,7 @@ textarea {
 }
 
 .answer-border {
-  background-color: gray;
+  background-color: rgb(219, 210, 86);
   padding: 5px;
   display: inline-block;
   width: 31%;
@@ -53,11 +53,15 @@ textarea {
 }
 
 .answer-card {
-  background-color: lightgrey;
+  background-color: grey;
   padding: 5px;
 }
 
 .answer-card .body {
   height: 4rem;
-  overflow: scroll;
+  overflow: auto;
+
 }
+// .answer-card .body::-webkit-scrollbar {
+//   color: black;
+// }
