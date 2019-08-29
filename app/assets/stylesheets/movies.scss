@@ -1,5 +1,4 @@
 .index-box {
-
 }
 
 textarea {
@@ -8,7 +7,15 @@ textarea {
 }
 
 .index-box img {
-  width: 100%
+  width: 100%;
+  border-style: solid;
+}
+
+#post_body {
+  background-color: rgb(124, 139, 190);
+  border: .5em;
+  border-style: solid;
+  border-color: rgb(215, 226, 98);
 }
 
 .movie-1, .movie-2, .answer-form {
