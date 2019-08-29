@@ -1,20 +1,29 @@
-<h1>Movie 1 <%= @prompt.movie_a["title"] %></h1>
-<h1>Movie 2 <%= @prompt.movie_b["title"] %></h1>
-
-
-<% if @prompt.posts.any? %>
-<h4>Here are the posts for this prompt:</h4>
-
-<% @prompt.posts.each do |post| %>
-  <ul>
-    <li>
-      <%= link_to post.body, prompt_post_path(@prompt, post) %>
-    </li>
-  </ul>
-<% end %>
-<% else %>
-<p>No posts are listed for this prompt.</p>
-<% end %>
+<div class="index-box">
+  <div class="top">
+    <div class="movie-1">
+      <%= image_tag @poster_one %>
+      <span><%= @plot_one %> </span>
+    </div>
+    <div class="answer-form">
+      <h4>How is <span class="movie-title"><%= @title_two %></span> the sequel to <span class="movie-title"><%= @title_one %></span>?</h4>
+      <%= form_for [@prompt, @post] do |f| %>
+      <%= f.text_area :body, :value => nil %>
+      <p><%= f.submit %></p>
+      <% end %>
+    </div>
+    <div class="movie-2">
+      <%= image_tag @poster_two %>
+      <span><%= @plot_two %> </span>
+    </div>
+  </div>
+  <div class="answers">
+    <% @answers.each do |answer| %>
+    <p><%= User.find(answer["user_id"]).username %> said: </p>
+    <p>"<%= answer["body"] %>"</p>
+    <p>Vote</p>
+   <% end %>
+  </div>
+</div>
 
 <p><%= link_to "Add a post", new_prompt_post_path(@prompt) %></p>
 

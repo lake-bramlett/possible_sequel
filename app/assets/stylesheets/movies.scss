@@ -1,3 +1,34 @@
-// Place all the styles related to the movies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.index-box {
+
+}
+
+textarea {
+  width: 80%;
+}
+
+.index-box img {
+  width: 100%
+}
+
+.movie-1 {
+  border: 1px solid red;
+  display: inline-block;
+  width: 24%
+}
+
+.movie-2 {
+  border: 1px solid blue;
+  display: inline-block;
+  width: 24%
+}
+
+.answer-form {
+  border: 1px solid black;
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+
+.answers {
+  border: 1px solid green;
+}
