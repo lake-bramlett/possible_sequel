@@ -10,10 +10,14 @@ header h1 {
 
 header nav {
   margin-bottom: 15px;
+  margin: 0px;
 }
 
 header nav span {
-  margin: 0px 1%;
+  margin: 0px ;
+  align-items: center;
+  justify-content: space-between;
+  // display: flex;
 }
 
 .flashes {
