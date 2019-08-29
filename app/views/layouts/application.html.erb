@@ -4,7 +4,7 @@
     <title>Possible Sequel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,7 +12,7 @@
   <body>
     <header>
       <nav>
-        <h1 class="headline">Possible Sequel</h1>
+        <h1 class="headline"><span class="possible">Possible</span><span class="sequel">Sequel</span></h1>
         <div class="nav">
           <% if current_user %>
             <span><%= link_to "Sign out", '/signout' %></span>
