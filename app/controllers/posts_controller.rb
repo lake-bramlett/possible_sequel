@@ -46,6 +46,12 @@ class PostsController < ApplicationController
     redirect_to prompt_path(@post.prompt)
   end
 
+  def vote
+    @post = Post.find(params[:id])
+    @post.upvote
+    redirect_to prompt_path(@post.prompt)
+  end
+
   private
   def post_params
     params.require(:post).permit(:body)
