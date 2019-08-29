@@ -1,7 +1,9 @@
 @import 'movies';
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Graphique', sans-serif;
+  background-color: rgb(18, 13, 70);
+  color: #d81f26;
 
 }
 
@@ -24,7 +26,6 @@ header nav span {
   justify-content: space-between;
   // display: flex;
 }
-
 
 .possible {
   text-transform: lowercase;
