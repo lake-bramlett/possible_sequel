@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/contact", to: "pages#contact", as: "contact"
 
 
+  put '/vote' => 'posts#vote'
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 

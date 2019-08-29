@@ -29,7 +29,7 @@
           <p>"<%= answer["body"] %>"</p>
         </div>
         <p>Votes: <%= answer["votes"] %></p>
-        <p>Vote</p>
+        <p><%= link_to "Vote", vote_path(answer), :method => :put %></p>
       </div>
     </div>
    <% end %>
