@@ -13,8 +13,8 @@
   <body>
     <header>
       <nav class='nav-style'>
-        
-        <h1 class="headline"><span class="possible">Possible</span><span class="sequel">Sequel</span></h1>
+
+        <h1 class="headline"><span class="possible"><%= link_to "Possible", '/' %></span><span class="sequel"><%= link_to "Sequel", '/' %></span></h1>
         <div class="nav">
           <% if current_user %>
             <span><%= link_to "Sign out", '/signout' %></span>
