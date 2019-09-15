@@ -68,6 +68,10 @@ textarea {
   padding: 15px;
 }
 
+.answers::-webkit-scrollbar {
+    display: none;
+}
+
 .answer-border {
   background-color: rgb(215, 226, 98);
   padding: 5px;
