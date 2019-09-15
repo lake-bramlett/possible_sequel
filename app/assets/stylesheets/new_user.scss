@@ -1,0 +1,18 @@
+form.new_user label {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+form.new_user input {
+  display: block;
+  margin-bottom: 20px;
+}
+
+form.new_user input[type="submit"] {
+  width: 80px;
+  background-color: #d7e262;
+  color: #333;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+}
