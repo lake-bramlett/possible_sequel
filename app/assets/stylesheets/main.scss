@@ -15,6 +15,10 @@ body {
   background-size: cover;
 }
 
+nav {
+  left: 15px;
+}
+
 nav h1 {
   font-family: 'Bungee Shade', cursive;
   animation-name: moveInLeft;
@@ -40,6 +44,7 @@ header nav span {
   align-items: center;
   justify-content: space-between;
   // display: flex;
+
 }
 
 .content {
@@ -47,12 +52,24 @@ header nav span {
   top: 200px;
 }
 
-
+// @media screen and (min-width: 40em)
+.nav-style {
+    background: linear-gradient(180deg,#000,transparent);
+    content: "";
+    display: block;
+    height: 150px;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity .25s ease,height .35s ease;
+}
 
 .possible {
   text-transform: lowercase;
   margin: 0px;
-  font-size: 3rem;
+  font-size: 30px !important;
 }
 
 .sequel {
